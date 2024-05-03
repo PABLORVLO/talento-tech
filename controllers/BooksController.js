@@ -5,13 +5,7 @@ const path = require('path');
 
 const BooksController = {
     index: (req, res) => {
-        const mensaje = 'se detecto un ingreso a la ruta'+req.url
-        const fechaHora = new Date().toLocaleString();
-
-        //console.log(fechaHora+" - "+mensaje);
-
-     fs.createWriteStream(path.join('logs','general_logs.txt'),{flags: 'a'})
-     fs.appendFileSync(path.join('logs','general_logs.txt'), fechaHora+ '-' +mensaje+ '\n');
+       
 
         //read the file books.json from data directory and get the data
         let data = fs.readFileSync(path.join('data', 'books.json'), 'utf8');
