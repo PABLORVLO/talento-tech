@@ -4,6 +4,6 @@ const BooksController = require('../controllers/BooksController');
 
 /* GET home page. */
 router.get('/', BooksController.index);
-router.get('/', BooksController.mensaje);
+router.get('/mensaje', BooksController.mensaje);
 
 module.exports = router;

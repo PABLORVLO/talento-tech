@@ -1,21 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Bienvenido <%= mensaje%></p>  
-    <br>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    li {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: 10px;
+      padding: 20px;
+      width: 30%;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 10px;
+      max-width: 100%;
+    }
+
+    h3 {
+      color: #333;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    p.book-details {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <p>Bienvenido <%= mensaje %></p>
+  <br>
+
   <ul>
     <% books.forEach((libro) => { %>
-      <img src="images/<%=libro.cover%>" alt="<%=libro.title %>_cover" width="150">
-     <li><%=libro.title%>by<%=libro.author%></li>
-     <br>
-
+      <li>
+        <img src="images/<%= libro.cover %>" alt="<%= libro.title %>_cover">
+        <h3><%= libro.title %> by <%= libro.author %></h3>
+        <p class="book-details">
+          Año: <%= libro.year %><br>
+          Publicación: <%= libro.published %><br>
+          Cantidad: <%= libro.quantity %><br>
+          Género: <%= libro.genre %><br>
+          Precio: <%= libro.price %><br>
+          Sinopsis: <%= libro.synopsis %>
+        </p>
+      </li>
     <% }) %>
   </ul>
-  </body>
-  
+</body>
 </html>
+
+
