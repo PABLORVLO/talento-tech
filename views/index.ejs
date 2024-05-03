@@ -6,6 +6,16 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Bienvenido <%= mensaje%></p>  
+    <br>
+  <ul>
+    <% books.forEach((libro) => { %>
+      <img src="images/<%=libro.cover%>" alt="<%=libro.title %>_cover" width="150">
+     <li><%=libro.title%>by<%=libro.author%></li>
+     <br>
+
+    <% }) %>
+  </ul>
   </body>
+  
 </html>

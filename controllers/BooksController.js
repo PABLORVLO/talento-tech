@@ -10,7 +10,11 @@ const BooksController = {
         //parse the data to convert it into an array of objects
         let books = JSON.parse(data);
         //send the response to the client
-        res.send(books);
+        //res.send(books);
+        res.render('index',{books, title: 'Tienda de libros - Bootcamp', mensaje:"estos son los productos de la tienda"})
+    },
+    mensaje: (req,res) => {
+        res,send("mensaje desde el controlador de libros ")
     }
 }
 
